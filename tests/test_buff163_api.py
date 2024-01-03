@@ -1,6 +1,6 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
-from buff163_unofficial_api.buff163_api import Buff163API
+from buff163_unofficial_api.buff163_unofficial_api import Buff163API
 from buff163_unofficial_api.models import Item, Result
 
 

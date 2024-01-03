@@ -1,4 +1,4 @@
-from buff163_unofficial_api.buff163_api import Buff163API
+from buff163_unofficial_api import Buff163API
 
 # This specific example does not need a cookie
 # This is how the cookie should be formatted
