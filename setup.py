@@ -8,7 +8,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="buff163-unofficial-api",
-    version="0.1.1",
+    version="0.1.2",
     author="Mark Zhdan",
     author_email="markzhdan@gmail.com",
     description="An unofficial API wrapper for Buff163, a CS skin marketplace.",
