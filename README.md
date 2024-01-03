@@ -22,7 +22,6 @@ Example of using the API to get frontpage items.
 from buff163_unofficial_api import Buff163API
 
 # Example cookie format
-[How to get cookie](#installation)
 cookie = "Device-Id=_; Locale-Supported=_; game=_; NTES_YD_SESS=_; S_INFO=_; P_INFO=_; remember_me=_; session=_; csrf_token=_"
 
 buff163api = Buff163API(session_cookie=cookie)
@@ -33,6 +32,16 @@ for item in market:
     print(f"{item.market_hash_name}")
     print(f"¥ {item.sell_min_price}\n")
 ```
+
+<!-- DOCUMENTATION -->
+
+## Documentation
+
+For detailed documentation, please refer to:
+
+[Read the Docs](https://buff163-unofficial-api.readthedocs.io/en/latest/)
+
+[Function Overviews](https://buff163-unofficial-api.readthedocs.io/en/latest/buff163_unofficial_api.html)
 
 <!-- CONTRIBUTING -->
 
