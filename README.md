@@ -33,6 +33,23 @@ for item in market:
     print(f"¥ {item.sell_min_price}\n")
 ```
 
+<!-- Get Cookie -->
+
+## How To Get Your Cookie
+
+1. Be logged into [https://buff.163.com](https://buff.163.com) & open the site.
+2. Open inspect element.
+
+   > F12 on Windows | Command + SHIFT + C on Mac.
+
+3. Click on the "Network" tab at the top.
+4. Refresh the page.
+5. Filter with "api".
+6. Click on any of the results (Ex: popular_sell_order?=#).
+7. On the right scroll down to the "Request Headers" section.
+8. Copy the large "Cookie:" parameter under the request headers.
+9. Set this as the session cookie (Ex: Buff163API(session_cookie="your_cookie")).
+
 <!-- DOCUMENTATION -->
 
 ## Documentation
