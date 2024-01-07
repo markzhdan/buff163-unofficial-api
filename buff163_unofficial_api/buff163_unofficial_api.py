@@ -1,8 +1,8 @@
 import logging
-from typing import Iterator, Callable
+from typing import Iterator, Callable, Union
 from buff163_unofficial_api.rest_adapter import RestAdapter
-from buff163_unofficial_api.exceptions import Buff163Exception
 from buff163_unofficial_api.models import *
+from buff163_unofficial_api.cs_enums import *
 
 
 class Buff163API:
@@ -50,18 +50,24 @@ class Buff163API:
         return market
 
     def get_item_market(
-        self, category: Category = Category.BUTTERFLY, pageNum: int = 1
+        self,
+        category: Union[Knife, Gun, Glove, Agent, Sticker, OtherItem],
+        pageNum: int = 1,
     ) -> List[Item]:
         """Get specific item's market page.
 
         Args:
+            category (enum): the specific category of cs items.
             pageNum (int, optional): Which page number to get. Defaults to 1.
 
         Returns:
             List[Item]: List of overview of items.
         """
+        if not isinstance(category, Enum):
+            raise TypeError("Category must be an instance of an Enum.")
+
         result = self._rest_adapter.get(
-            endpoint=f"/market/goods?game=csgo&page_num={pageNum}&category=weapon_bayonet"
+            endpoint=f"/market/goods?game=csgo&page_num={pageNum}&category={category.value}"
         )
 
         market = [Item(**item) for item in result.data["data"]["items"]]
