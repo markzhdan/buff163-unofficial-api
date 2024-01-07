@@ -20,6 +20,11 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+.DS_Store
 
 # Sphinx documentation
 docs/_build/
+
+# Misc
+instructions.md
+test_examples.py

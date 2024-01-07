@@ -49,6 +49,24 @@ class Buff163API:
         market = [Item(**item) for item in result.data["data"]["items"]]
         return market
 
+    def get_item_market(
+        self, category: Category = Category.BUTTERFLY, pageNum: int = 1
+    ) -> List[Item]:
+        """Get specific item's market page.
+
+        Args:
+            pageNum (int, optional): Which page number to get. Defaults to 1.
+
+        Returns:
+            List[Item]: List of overview of items.
+        """
+        result = self._rest_adapter.get(
+            endpoint=f"/market/goods?game=csgo&page_num={pageNum}&category=weapon_bayonet"
+        )
+
+        market = [Item(**item) for item in result.data["data"]["items"]]
+        return market
+
     def fetch_image_data(self, item: Item):
         """Fetches Item icon.
 
