@@ -30,7 +30,7 @@ class Buff163API:
         """Get first featured market item (random).
 
         Returns:
-            Item: Overview of specific item.
+            Item: Overview of an item.
         """
         return self.get_featured_market()[0]
 
@@ -77,7 +77,7 @@ class Buff163API:
         """Fetches Item icon.
 
         Args:
-            item (Item): Specific Item from market.
+            item (Item): Item from market.
         """
         item.data = self._rest_adapter.fetch_data(url=item.goods_info.icon_url)
 
@@ -130,3 +130,18 @@ class Buff163API:
             Iterator[Item]: List of Items
         """
         return self._page(endpoint="/market/goods", model=Item, max_amt=max_amt)
+
+    def get_item(self, item_id: int) -> SpecificItem:
+        """Gets the description/details of an item.
+
+        Args:
+            item_id (int): Specific item's goods_id.
+
+        Returns:
+            SpecificItem: Specific item.
+        """
+        result = self._rest_adapter.get(
+            endpoint=f"/market/goods/info?game=csgo&goods_id={item_id}"
+        )
+
+        return SpecificItem(**result.data["data"])
