@@ -234,8 +234,6 @@ class SpecificItem:
         asset_tags_buy_order: List[Any],
         asset_tags_history: List[Any],
         bookmarked: bool,
-        buy_max_price: int,
-        buy_min_price_limit: int,
         buy_num: int,
         can_buy: bool,
         can_sort_by_heat: bool,
@@ -279,6 +277,13 @@ class SpecificItem:
         transacted_num: int,
         user_show_count: int,
         wiki_link: None,
+        has_rent_order: bool,
+        rent_day_choices: List[int],
+        rent_num: int,
+        rent_sort_by_fields: SortByFields,
+        support_charm: bool,
+        buy_max_price: int = None,
+        buy_min_price_limit: int = None,
     ) -> None:
         self.allow_bundle_inventory = allow_bundle_inventory
         self.appid = appid
@@ -331,3 +336,4 @@ class SpecificItem:
         self.transacted_num = transacted_num
         self.user_show_count = user_show_count
         self.wiki_link = wiki_link
+
