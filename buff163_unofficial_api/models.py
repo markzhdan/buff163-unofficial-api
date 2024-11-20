@@ -284,6 +284,7 @@ class SpecificItem:
         support_charm: bool,
         buy_max_price: int = None,
         buy_min_price_limit: int = None,
+        is_charm: bool = None,
     ) -> None:
         self.allow_bundle_inventory = allow_bundle_inventory
         self.appid = appid
